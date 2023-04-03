@@ -17,8 +17,7 @@ def get_comment_corpus(videoid, num_comments):
         data = r.json()
         for i in data["items"]:
             comm = i["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
-            comment = comm.lower()
-            comment = prettify_comment.prettify_comment(comment)
+            comment = prettify_comment.prettify_comment(comm)
             text_data.append(comment)
 
         if data.get("nextPageToken"):
