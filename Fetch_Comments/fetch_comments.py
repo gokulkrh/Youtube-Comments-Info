@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 import requests
+from Preprocessing import prettify_comment
 
 
 def get_comment_corpus(videoid, num_comments):
@@ -17,6 +18,7 @@ def get_comment_corpus(videoid, num_comments):
         for i in data["items"]:
             comm = i["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
             comment = comm.lower()
+            comment = prettify_comment.prettify_comment(comment)
             text_data.append(comment)
 
         if data.get("nextPageToken"):
@@ -28,6 +30,6 @@ def get_comment_corpus(videoid, num_comments):
 
     return comment_corpus
 
-
+#for testing
 if __name__ == "__main__":
     print(get_comment_corpus("5QiW4kOxXVg", 10))
