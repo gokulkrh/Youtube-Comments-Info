@@ -4,6 +4,7 @@ import string
 
 
 def prettify_comment(raw_comment):
+    raw_comment = raw_comment.lower()
     raw_comment = html.unescape(raw_comment)
     raw_comment = "".join(x for x in raw_comment if x in string.printable)
     raw_comment = re.sub(r'<[^<]+?>', ' ', raw_comment)
