@@ -1,7 +1,9 @@
 from dotenv import load_dotenv
 import os
 import requests
+
 from Preprocessing import prettify_comment
+from Spam_Filter.spam_filter import spam_or_ham
 
 
 def get_comment_corpus(videoid, num_comments):
@@ -18,7 +20,10 @@ def get_comment_corpus(videoid, num_comments):
         for i in data["items"]:
             comm = i["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
             comment = prettify_comment.prettify_comment(comm)
-            text_data.append(comment)
+            if not spam_or_ham(comment):
+                text_data.append(comment)
+            else:
+                print(comment)
 
         if data.get("nextPageToken"):
             params.update({"pageToken": data["nextPageToken"]})
@@ -31,4 +36,4 @@ def get_comment_corpus(videoid, num_comments):
 
 #for testing
 if __name__ == "__main__":
-    print(get_comment_corpus("5QiW4kOxXVg", 10))
+    get_comment_corpus("5QiW4kOxXVg", 10)
