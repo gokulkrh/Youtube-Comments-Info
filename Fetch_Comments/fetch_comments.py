@@ -4,6 +4,7 @@ import requests
 
 from Preprocessing.prettify_comment import prettify_comment
 from Spam_Filter.spam_filter import spam_or_ham
+from Multilabel_Emotion_Recognition.emotion_recognition import emotion_recognizer 
 
 
 def get_comment_corpus(videoid, num_comments):
@@ -22,8 +23,6 @@ def get_comment_corpus(videoid, num_comments):
             comment = prettify_comment(comm)
             if not spam_or_ham(comment):
                 text_data.append(comment)
-            else:
-                print(comment)
 
         if data.get("nextPageToken"):
             params.update({"pageToken": data["nextPageToken"]})
@@ -32,8 +31,9 @@ def get_comment_corpus(videoid, num_comments):
         comment_corpus += i
         comment_corpus += "\n"
 
-    return comment_corpus
+    emos = emotion_recognizer(text_data)
+    return emos
 
 #for testing
 if __name__ == "__main__":
-    get_comment_corpus("5QiW4kOxXVg", 10)
+    print(get_comment_corpus("5QiW4kOxXVg", 10))
