@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 import requests
 
-from Preprocessing import prettify_comment
+from Preprocessing.prettify_comment import prettify_comment
 from Spam_Filter.spam_filter import spam_or_ham
 
 
@@ -19,7 +19,7 @@ def get_comment_corpus(videoid, num_comments):
         data = r.json()
         for i in data["items"]:
             comm = i["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
-            comment = prettify_comment.prettify_comment(comm)
+            comment = prettify_comment(comm)
             if not spam_or_ham(comment):
                 text_data.append(comment)
             else:

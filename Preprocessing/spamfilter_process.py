@@ -1,5 +1,6 @@
 import re
 import joblib
+import demoji
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.corpus import stopwords
 from textblob import Word
@@ -7,8 +8,9 @@ import nltk
 nltk.download('stopwords')
 stop = stopwords.words('english')
 
-#remove hashtags and user mentions from comments.
+#remove hashtags, emojis, user mentions from comments.
 def remove_tags_mentions(raw_comment):
+    raw_comment = demoji.replace(raw_comment, '')
     raw_comment = re.sub("@[A-Za-z0-9_]+", "", raw_comment)
     raw_comment = re.sub("#[A-Za-z0-9_]+", "", raw_comment)
     return raw_comment
