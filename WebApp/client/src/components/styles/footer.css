@@ -1,0 +1,89 @@
+.footer {
+    width: 100%;
+    height: 20%;
+    background-color: black;
+}
+
+.footer-column {
+    height: 80%;
+    display: flex;
+}
+
+.footer-about-section {
+    height: 100%;
+    width: 30%;
+}
+.footer-about-section > p {
+    color: rgb(249, 249, 249);
+    font-size: small;
+    height: 70%;
+    width: 80%;
+    padding-left: 8%;
+}
+
+.media-link-icons {
+    text-align: center;
+    margin-top: 6%;
+}
+.media-link-icons > h3 {
+    margin: 0;
+}
+.socials {
+    color: antiquewhite;
+    height: 100%;
+    width: 30%;
+}
+.footer-media-icons {
+    max-height: 40px;
+    max-width: 40px;
+    margin-inline: 12.5px;
+}
+
+.contact-details {
+    height: 100%;
+    width: 40%;
+    padding-block: 1%;
+    text-align: center;
+}
+.message-to-me {
+    border-radius: 10px;
+    height: 120px;
+    width: 80%;
+    color: aliceblue;
+    background-color: transparent;
+}
+.message-to-me:focus {
+    outline: none;
+    border: 1px solid #f63b3b;
+    box-shadow: 0 0 8px #f57d06;
+}
+.contact-details > button {
+    margin-top: 2%;
+    height: 40px;
+    width: 40%;
+    color: antiquewhite;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 0.5px solid rgb(47, 47, 49);
+}
+.contact-details > button:hover {
+    color: black;
+    background-color: #f57d06;
+}
+.contact-details > button:active {
+    background-color: #543210;
+}
+
+
+.disclaimer {
+    height: 20%;
+    color: aliceblue;
+    text-align: center;
+    font-size: xx-small;
+    padding-top: 0.2%;
+    padding-bottom: 0.4%;
+    border-top: 0.5px ridge rgb(47, 47, 49);
+}
+.disclaimer > p {
+    margin: 0;
+}
