@@ -1,1 +1,1 @@
-print("Hello world")
+link = input("Enter the link for the video:\n")
