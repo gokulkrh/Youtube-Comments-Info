@@ -10,8 +10,8 @@ def return_emo_stats(videoid):
 
 
 @app.route("/fyp/v1/named_entities/<videoid>")
-def return_named_entities(videoid):
-    return jsonify(mock_responses.mock_named_entities)
+def return_named_keywords(videoid):
+    return jsonify(mock_responses.mock_named_keywords)
 
 
 @app.route("/fyp/v1/comments_summary/<videoid>")

@@ -29,9 +29,10 @@ mock_emotion = {
     }
 }
 
-mock_named_entities = {
+mock_named_keywords = {
     "Entities": {
-        "james cameron": "james cameron and all the actors are truly incredible and have incredible talents - and they are able to create this stunning movie is beyond me"
+        "james cameron": "james cameron and all the actors are truly incredible and have incredible talents - and they are able to create this stunning movie is beyond me",
+        "pandora": "the beauty of pandora is overwhelming and its creatures utterly captivating"
     }
 }
 
@@ -41,5 +42,5 @@ mock_summary = {
 
 mock_all = {}
 mock_all.update(mock_emotion)
-mock_all.update(mock_named_entities)
+mock_all.update(mock_named_keywords)
 mock_all.update(mock_summary)
