@@ -1,6 +1,5 @@
 import joblib
 from Preprocessing import spamfilter_process
-from sklearn.linear_model import SGDClassifier
 
 
 def spam_or_ham(comment):

@@ -23,17 +23,10 @@ def get_comment_corpus(videoid, num_comments):
             comment = prettify_comment(comm)
             if not spam_or_ham(comment):
                 text_data.append(comment)
+                comment_corpus += comment
+                comment_corpus += " "
 
         if data.get("nextPageToken"):
             params.update({"pageToken": data["nextPageToken"]})
 
-    for i in text_data:
-        comment_corpus += i
-        comment_corpus += "\n"
-
-    emos = emotion_recognizer(text_data)
-    return emos
-
-#for testing
-if __name__ == "__main__":
-    print(get_comment_corpus("5QiW4kOxXVg", 10))
+    return text_data, comment_corpus
