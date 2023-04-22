@@ -5,7 +5,7 @@ from spacy.lang.en.stop_words import STOP_WORDS
 nlp = spacy.load('en_core_web_sm')
 
 
-class TextRank4Keyword():
+class TextRank():
     def __init__(self):
         self.d = 0.85
         self.min_diff = 1e-5
@@ -18,6 +18,7 @@ class TextRank4Keyword():
             lexeme = nlp.vocab[word]
             lexeme.is_stop = True
     
+
     def sentence_segment(self, doc, candidate_pos, lower):
         sentences = []
         for sent in doc.sents:
@@ -31,6 +32,7 @@ class TextRank4Keyword():
             sentences.append(selected_words)
         return sentences
         
+
     def get_vocab(self, sentences):
         vocab = OrderedDict()
         i = 0
@@ -40,6 +42,7 @@ class TextRank4Keyword():
                     vocab[word] = i
                     i += 1
         return vocab
+    
     
     def get_token_pairs(self, window_size, sentences):
         token_pairs = list()
@@ -53,9 +56,11 @@ class TextRank4Keyword():
                         token_pairs.append(pair)
         return token_pairs
         
+
     def symmetrize(self, a):
         return a + a.T - np.diag(a.diagonal())
     
+
     def get_matrix(self, vocab, token_pairs):
         vocab_size = len(vocab)
         g = np.zeros((vocab_size, vocab_size), dtype='float')
@@ -70,7 +75,7 @@ class TextRank4Keyword():
         return g_norm
 
     
-    def get_keywords(self, number=10):
+    def get_keywords(self):
         node_weight = dict(sorted(self.node_weight.items(), key=lambda t: t[1], reverse=True))
         return node_weight
         
