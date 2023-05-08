@@ -11,8 +11,10 @@ export default class LandingPage extends Component {
 
     fetchAllData = async () => {
         const input = document.querySelector('.main-search-box');
-        var url = input.value;
-        url = "http://localhost:5000/fyp/v1/all/%3Cvideoid%3E";
+        var inp = input.value;
+        const videoid = inp.match(/v=([a-zA-Z0-9_-]{11})/)[1];
+
+        const url = "http://localhost:5000/fyp/v1/all/" + videoid;
         const response = await fetch(url, {
             method: 'GET',
             headers: {
@@ -28,7 +30,7 @@ export default class LandingPage extends Component {
             <div className='content'>
                 {/* <h1>Welcome To the Page Brah</h1> */}
                 <div className='search-area'>
-                    <h1>Search for a video, Give me the link</h1>
+                    <h1>Enter a video link</h1>
                     <div className="main-search-bar">
                         <input type="text" className="main-search-box"></input>
                         <button className="main-search-button" onClick={this.fetchAllData}>Search</button>
@@ -38,26 +40,26 @@ export default class LandingPage extends Component {
                 <>
                     <div className='emotion-display-area'>
                         <h1>Emotions expressed by viewers</h1>
-                        {Object.entries(this.state.data.EmoStats).map(([emotion, value]) => (
+                        {Object.entries(this.state.data.Emostats).map(([emotion, value]) => (
                             <div key={emotion}>
-                                <span className='emotion-display'>{emotion}:</span>
-                                <span className='emotion-display'>{value.toFixed(2)}</span>
+                                <button className='emotion-display'>{emotion}:</button>
+                                <button className='emotion-display'>{value.toFixed(2)}</button>
                             </div>
                         ))}
                     </div>
-                    <div className='keywords-display-area'>
+                    <div className='emotion-display-area'>
                         <h1>Keywords found in comment section</h1>
-                        {Object.entries(this.state.data.Entities).map(([entity]) => (
+                        {Object.entries(this.state.data.Keywords).map(([entity]) => (
                             <div key={entity}>
-                                <span className='entity-display'>{entity}:</span>
+                                <button className='emotion-display'>{entity}:</button>
                             </div>
                         ))}
                     </div>
-                    <div className='summary-display-area'>
+                    <div className='emotion-display-area'>
                         <h1>Summary of the comment section</h1>
-                    </div>
-                    <div className='specific-summary-display-area'>
-                        <h1>Summary about keywords, NEs etc</h1>
+                        <div className='summary-div'>
+                            <span className='summary'>{this.state.data.Summary}:</span>
+                        </div>
                     </div>
                 </>
                 )};

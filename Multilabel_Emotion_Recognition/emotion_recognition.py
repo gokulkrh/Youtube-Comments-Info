@@ -5,10 +5,20 @@ from keras.models import load_model
 import keras.backend as K
 from transformers import BertTokenizerFast, BertConfig
 from Preprocessing.emotionrecognizer_process import preprocess_corpus_for_emo
+import tensorflow as tf
+
+global graph
+graph = tf.compat.v1.get_default_graph()
+def get_weighted_loss(weights):
+    def weighted_loss(y_true, y_pred):
+        return K.mean((weights[:,0]**(1-y_true))*(weights[:,1]**(y_true))*K.binary_crossentropy(y_true, y_pred), axis=-1)
+    return weighted_loss
+with keras.utils.custom_object_scope({'weighted_loss': get_weighted_loss}):
+    model = load_model('/home/gokul/Projects/Youtube-Comments-Info/Multilabel_Emotion_Recognition/emotion_recognizer')
 
 
 def proba_to_labels(y_pred_proba, threshold=0.8):
-    
+
     y_pred_labels = np.zeros_like(y_pred_proba)
     
     for i in range(y_pred_proba.shape[0]):
@@ -22,14 +32,14 @@ def proba_to_labels(y_pred_proba, threshold=0.8):
 
 
 def emotion_recognizer(text_samples):
-    def get_weighted_loss(weights):
-        def weighted_loss(y_true, y_pred):
-            return K.mean((weights[:,0]**(1-y_true))*(weights[:,1]**(y_true))*K.binary_crossentropy(y_true, y_pred), axis=-1)
-        return weighted_loss
+    # def get_weighted_loss(weights):
+    #     def weighted_loss(y_true, y_pred):
+    #         return K.mean((weights[:,0]**(1-y_true))*(weights[:,1]**(y_true))*K.binary_crossentropy(y_true, y_pred), axis=-1)
+    #     return weighted_loss
 
-    with keras.utils.custom_object_scope({'weighted_loss': get_weighted_loss}):
-        model = load_model('Multilabel_Emotion_Recognition/emotion_recognizer')
-
+    # with graph.as_default():
+        # with keras.utils.custom_object_scope({'weighted_loss': get_weighted_loss}):
+        #     model = load_model('/home/gokul/Projects/Youtube-Comments-Info/Multilabel_Emotion_Recognition/emotion_recognizer')
     threshold = 0.8700000000000001
     
     text_samples_clean = [preprocess_corpus_for_emo(text) for text in text_samples]
@@ -54,7 +64,6 @@ def emotion_recognizer(text_samples):
                'attention_mask': samples_token['attention_mask'],
                'token_type_ids': samples_token['token_type_ids']
               }
-    
     samples_pred_proba = model.predict(samples)
     
     samples_pred_labels = proba_to_labels(samples_pred_proba, threshold)

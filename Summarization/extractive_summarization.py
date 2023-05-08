@@ -20,7 +20,7 @@ def get_extractive_summ(comments):
     data = pd.DataFrame(comments)
     data.columns=['comments']
     data['embeddings']=data['comments'].apply(get_sentence_embeddings)
-    NUM_CLUSTERS=10
+    NUM_CLUSTERS=20
     iterations=25
     X = np.array(data['embeddings'].tolist())
     kclusterer = KMeansClusterer(
