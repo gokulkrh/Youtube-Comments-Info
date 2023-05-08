@@ -7,7 +7,7 @@ from Spam_Filter.spam_filter import spam_or_ham
 from Multilabel_Emotion_Recognition.emotion_recognition import emotion_recognizer 
 
 
-def get_comment_corpus(videoid, num_comments):
+def get_comment_corpus(videoid, num_comments=10):
     text_data = []
     comment_corpus = ""
     load_dotenv()
@@ -25,6 +25,8 @@ def get_comment_corpus(videoid, num_comments):
                 text_data.append(comment)
                 comment_corpus += comment
                 comment_corpus += " "
+            if len(text_data) > num_comments:
+                break
 
         if data.get("nextPageToken"):
             params.update({"pageToken": data["nextPageToken"]})
