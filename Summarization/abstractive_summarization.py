@@ -2,12 +2,11 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration, T5Config
 
 
 def abstractive_summary(text):
-    device = 'cpu'
-    model = T5ForConditionalGeneration.from_pretrained('t5-small')
+    device = 'cuda'
+    model = T5ForConditionalGeneration.from_pretrained('t5-small').to(device)
     tokenizer = T5Tokenizer.from_pretrained('t5-small')
     preprocess_text = text.strip().replace("\n","")
     t5_prepared_Text = "summarize: "+preprocess_text
-    print ("original text preprocessed: \n", preprocess_text)
 
     tokenized_text = tokenizer.encode(t5_prepared_Text, return_tensors="pt").to(device)
 

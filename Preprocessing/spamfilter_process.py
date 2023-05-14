@@ -47,6 +47,6 @@ def preprocessed_comment(raw_comment):
 
 def vectorized_comment(raw_comment):
     preprocessed_comment(raw_comment)
-    vectorizer = joblib.load('Preprocessing/count_vect.pkl')
+    vectorizer = joblib.load('/home/gokul/Projects/Youtube-Comments-Info/Preprocessing/count_vect.pkl')
     comment_vector = vectorizer.transform([raw_comment])
     return comment_vector

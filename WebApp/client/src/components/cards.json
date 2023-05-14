@@ -1,0 +1,109 @@
+{
+    "amusement": {
+        "filename": "realization.png",
+        "description": "percent of your viewers were amused."
+    },
+ "gratitude": {
+    "filename": "gratitude.png",
+    "description": "percent of your viewers were grateful."
+},
+ "joy": {
+    "filename": "excitement.png",
+    "description": "percent of your viewers felt joy."
+},
+ "disapproval": {
+    "filename": "remorse.png",
+    "description": "percent of your viewers disapprove of the content."
+},
+ "fear": {
+    "filename": "fear.png",
+    "description": "percent of your viewers were afraid."
+},
+ "sadness": {
+    "filename": "sad.png",
+    "description": "percent of your viewers were sad."
+},
+ "caring": {
+    "filename": "caring.png",
+    "description": "percent of your viewers were caring."
+},
+ "nervousness": {
+    "filename": "fear.png",
+    "description": "percent of your viewers were nervous."
+},
+ "curiosity": {
+    "filename": "curiosity.png",
+    "description": "percent of your viewers were curious."
+},
+ "pride": {
+    "filename": "caring.png",
+    "description": "percent of your viewers felt pride."
+},
+ "disappointment": {
+    "filename": "remorse.png",
+    "description": "percent of your viewers were disappointed."
+},
+ "confusion": {
+    "filename": "confusion.png",
+    "description": "percent of your viewers were confused."
+},
+ "annoyance": {
+    "filename": "annoyance.png",
+    "description": "percent of your viewers were annoyed."
+},
+ "optimism": {
+    "filename": "caring.png",
+    "description": "percent of your viewers are optimistic about the content."
+},
+ "realization": {
+    "filename": "realization.png",
+    "description": "percent of your viewers came to some kind of realization."
+},
+ "surprise": {
+    "filename": "surprise.png",
+    "description": "percent of your viewers were surprised."
+},
+ "disgust": {
+    "filename": "disgust.png",
+    "description": "percent of your viewers were disgusted."
+},
+ "admiration": {
+    "filename": "love.png",
+    "description": "percent of your viewers admires the content."
+},
+ "approval": {
+    "filename": "approval.png",
+    "description": "percent of your viewers approve of the content."
+},
+ "grief": {
+    "filename": "remorse.png",
+    "description": "percent of your viewers felt grief."
+},
+ "relief": {
+    "filename": "excitement.png",
+    "description": "percent of your viewers felt relief."
+},
+ "love": {
+    "filename": "love.png",
+    "description": "percent of your viewers loved it."
+},
+ "remorse": {
+    "filename": "remorse.png",
+    "description": "percent of your viewers felt remorse."
+},
+ "excitement": {
+    "filename": "excitement.png",
+    "description": "percent of your viewers were excited."
+},
+ "embarrassment": {
+    "filename": "embarrassment.png",
+    "description": "percent of your viewers were embarrassed."
+},
+ "desire": {
+    "filename": "desire.png",
+    "description": "percent of your viewers expressed desire."
+},
+ "anger": {
+    "filename": "anger.png",
+    "description": "percent of your viewers were angry."
+}}

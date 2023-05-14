@@ -1,0 +1,19 @@
+.summary-display-area {
+    background-color: black;
+    border-top: 0.5px ridge rgb(241, 99, 10);
+}
+.summary-display-area > h3 {
+    padding-top: 2%;
+    text-align: center;
+}
+
+.summary-div {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    /* margin-left: 1%; */
+    padding-top: 2%;
+    padding-bottom: 5%;
+    color: aliceblue;
+}

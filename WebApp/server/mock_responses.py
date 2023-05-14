@@ -43,4 +43,43 @@ mock_summary = {
 mock_all = {}
 mock_all.update(mock_emotion)
 mock_all.update(mock_named_keywords)
-mock_all.update(mock_summary)
+
+new_mock = {
+    "Emostats": {
+        "admiration": 18.556701030927837,
+        "amusement": 20.618556701030926,
+        "annoyance": 1.0309278350515463,
+        "approval": 8.24742268041237,
+        "caring": 3.0927835051546393,
+        "confusion": 3.0927835051546393,
+        "curiosity": 1.0309278350515463,
+        "desire": 2.0618556701030926,
+        "disapproval": 1.0309278350515463,
+        "embarrassment": 2.0618556701030926,
+        "excitement": 7.216494845360824,
+        "gratitude": 4.123711340206185,
+        "joy": 10.309278350515463,
+        "love": 13.402061855670103,
+        "optimism": 1.0309278350515463,
+        "surprise": 3.0927835051546393
+    },
+    "Keywords": {
+        "buff": 1.2038021923512996,
+        "fame": 0.8900463408119658,
+        "gordon": 1.023,
+        "green": 1.012,
+        "kay": 2.637470366191348,
+        "ken": 1.887303914835165,
+        "lee": 3.9975938344889235,
+        "lol": 1.7877980578449324,
+        "master": 1.8310194215506714,
+        "ramsay": 1.023,
+        "rhett": 1.153633585164835,
+        "sen": 1.012,
+        "sensei": 1.2844715735653236,
+        "supreme": 1.0544117826617825,
+        "tobasco": 1.023
+    },
+    "Summary": "lee is a champ for keeping this tradition alive this is the first time we see kay actually eat. the science experiment subject has become the scientist! happy early mums day!"
+}
+mock_all.update()

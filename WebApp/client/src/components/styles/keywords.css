@@ -1,0 +1,19 @@
+.emotion-display {
+    color: aliceblue;
+    margin-left: 10%;
+    border-radius: 10px;
+    text-align: center;
+    border: 0.5px ridge rgba(234, 230, 227, 0.483);
+    height: 40px;
+    width: 12%;
+    margin-block: 1%;
+    color: aliceblue;
+    background-color: rgba(255, 255, 255, 0.254);
+    border: none;
+    border-radius: 10px;
+}
+
+.emotion-display-area {
+    background-color: black;
+    border-top: 0.5px ridge rgb(241, 99, 10);
+}

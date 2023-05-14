@@ -1,30 +1,3 @@
-.emotion-display {
-    color: aliceblue;
-    margin-left: 10%;
-    border-radius: 10px;
-    text-align: center;
-    border: 0.5px ridge rgba(234, 230, 227, 0.483);
-    height: 40px;
-    width: 12%;
-    margin-block: 1%;
-    color: aliceblue;
-    background-color: rgba(255, 255, 255, 0.254);
-    border: none;
-    border-radius: 10px;
-}
-
-.emotion-display-area {
-    background-color: black;
-    border-top: 0.5px ridge rgb(241, 99, 10);
-}
-
-.summary-div {
-    margin-left: 1%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    color: aliceblue;
-}
-
 h1 {
     color: white;
 }
@@ -35,6 +8,7 @@ h1 {
     width: 100%;
     height: 460px;
     padding-top: 10%;
+    background-image: url('/home/gokul/Projects/Youtube-Comments-Info/WebApp/client/public/header-background-banner.png');
 } 
 .search-area > h1 {
     color: white;
@@ -51,12 +25,29 @@ h1 {
     width: 30%;
     color: white;
     margin-right: 1%;
-    background-color: transparent;
-    border-radius: 5px;
+    /* background-color: transparent; */
+    border-radius: 15px;
     border: 1px solid #ffffff85;
 }
 .main-search-box:focus {
     outline: none;
     border: 1px solid #f63b3b;
     box-shadow: 0 0 8px #f57d06;
+}
+
+.main-search-button {
+    margin-top: 2%;
+    height: 40px;
+    width: 10%;
+    color: black;
+    background-color: #f57d06;
+    border-radius: 10px;
+    border: 0.5px solid rgb(47, 47, 49);
+}
+.main-search-button:hover {
+    color: black;
+    background-color: #f57d06;
+}
+.main-search-button:active {
+    background-color: #543210;
 }

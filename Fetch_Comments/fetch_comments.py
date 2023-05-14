@@ -7,7 +7,7 @@ from Spam_Filter.spam_filter import spam_or_ham
 from Multilabel_Emotion_Recognition.emotion_recognition import emotion_recognizer 
 
 
-def get_comment_corpus(videoid, num_comments=10):
+def get_comment_corpus(videoid, num_comments=1000):
     text_data = []
     comment_corpus = ""
     load_dotenv()

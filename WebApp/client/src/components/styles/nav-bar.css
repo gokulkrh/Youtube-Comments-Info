@@ -1,7 +1,7 @@
 #root {
     margin: 0;
-    height: 100vw;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 .nav-bar {
@@ -51,9 +51,8 @@ ul {
     margin: 0;
 }
 
-h1 {
+.section-title {
     margin: 0;
-}
-h4 {
-    margin: 0;
+    text-align: center;
+    padding-block: 2.5%;
 }
